@@ -7,7 +7,7 @@ import weka.filters.unsupervised.attribute.NumericToNominal;
 
 public class NumerictoNominal {
     public static Instances NumClassToNomClas(Instances data) throws Exception{
-                // Convert numeric class attribute to nominal
+        // Convert numeric class attribute to nominal
         NumericToNominal filter = new NumericToNominal();
         String[] options = new String[]{"-R", "last"};
         filter.setOptions(options);

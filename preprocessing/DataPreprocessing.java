@@ -34,7 +34,7 @@ import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 //& 'C:\Program Files\Java\jdk-19\bin\java.exe' --add-opens java.base/java.lang=ALL-UNNAMED '@C:\Users\ttai2\AppData\Local\Temp\cp_69omvkzt9jf8hks5k0f23a1t5.argfile' 'preprocessing.DataPreprocessing' 
 public class DataPreprocessing {
     public static void main(String[] args) throws Exception {
-        //  Convert CSV to ARFF
+        // Convert CSV to ARFF
         String arffFilePath = convertCSVtoARFF("D:\\Documents\\Downloads\\Weka project\\data\\creditcard.csv");
         // Read the raw dataset
         DataSource source = new DataSource(arffFilePath);
@@ -42,14 +42,14 @@ public class DataPreprocessing {
         // Convert numeric class attribute to nominal
         Instances nData = NumerictoNominal.NumClassToNomClas(data);
 
+        // Data Analysis 
         System.out.println(nData.toSummaryString());
         Instances cleanData = checkMissingValue(nData);
-        //  Data Analysis (Optional)
         performDataAnalysis(cleanData);
  
         /*
         Scaling and Distributing
-        In this phase of our kernel, we will first scale the columns comprise of Time and Amount . 
+        In this phase of our kernel, we will first scale the columns comprise of Time and Amount. 
         Time and amount should be scaled as the other columns. 
         */
         displayDistributionPlot(cleanData,"Time");
@@ -70,8 +70,11 @@ public class DataPreprocessing {
 
 
         // Calculate correlation matrices
+        //use the subsample - use for reference
         double[][] corrMatrix1 = CorrelationCalculator.calculateCorrelationMatrix(subData);
-        double[][] corrMatrix2 = CorrelationCalculator.calculateCorrelationMatrix(scaledData);
+
+        //dont use for reference (high class imbalance)
+        //double[][] corrMatrix2 = CorrelationCalculator.calculateCorrelationMatrix(scaledData);
         
         String[] attributeNames = {
             "scaled_amount","scaled_time", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10",
@@ -82,29 +85,32 @@ public class DataPreprocessing {
         CorrelationHeatmap.visualize(attributeNames,corrMatrix1);
 
         //Class Negative Correlation
-        BoxPlotVisualizer.displayBoxPlots(subData,"V10");
-        BoxPlotVisualizer.displayBoxPlots(subData,"V12");
-        BoxPlotVisualizer.displayBoxPlots(subData,"V14");
-        BoxPlotVisualizer.displayBoxPlots(subData,"V17");
+        BoxPlotVisualize.visualize(subData,"V10","V12","V14","V17");
+
         //Class Positive Correlation
-        BoxPlotVisualizer.displayBoxPlots(subData,"V2");
-        BoxPlotVisualizer.displayBoxPlots(subData,"V4");
-        BoxPlotVisualizer.displayBoxPlots(subData,"V11");
-        BoxPlotVisualizer.displayBoxPlots(subData,"V19");
+        BoxPlotVisualize.visualize(subData,"V2","V4","V11","V19");
 
-        Instances rmV10Data = RemoveOutlier.removeOutliers(subData,"V10");// have 10 outliers
-        Instances rmV12Data = RemoveOutlier.removeOutliers(subData,"V12");
-        Instances rmV14Data = RemoveOutlier.removeOutliers(subData,"V14");
 
+        //Topic focus on Fraud Transaction so we check and remove Fraud values
+        // Threshold = 3
+        Instances rmV10Data = RemoveOutlier.removeFraudOutliers(subData,"V10");// have 3 outliers
+        Instances rmV12Data = RemoveOutlier.removeFraudOutliers(subData,"V12");
+        Instances rmV14Data = RemoveOutlier.removeFraudOutliers(subData,"V14");
+ 
         // Save the preprocessed data as ARFF file
         saveAsARFF(trainData, "D:\\Documents\\Downloads\\Weka project\\data\\train_data.arff");
         saveAsARFF(testData, "D:\\Documents\\Downloads\\Weka project\\data\\test_data.arff");
         saveAsARFF(rmV10Data, "D:\\Documents\\Downloads\\Weka project\\data\\new_data.arff");
+
+        ////////////////////////////////////////////////////////////////////////////
+        //    After Preprocessing step, we will have 3 data files:                //
+        //        + train_data.arff   ( 80% original data,                        //
+        //        + test_data.arff      20% original data ) have same ratio:      //
+        //                           No Fraud: 99.83% , Fraud: 0.17%              //
+        //        + new_data.arff   (sub-sample 50/50 ratio)                      //
+        ////////////////////////////////////////////////////////////////////////////
     }
     
-
-
-
     public static Instances shuffleAndBalanceData(Instances data) {
         // Set the class index if not set
         if (data.classIndex() == -1) {
@@ -234,8 +240,6 @@ public class DataPreprocessing {
         return splitData;
     }
 
-
- 
     public static Instances scaleAndAddAttributes(Instances data) {
         // Extract 'Time' and 'Amount' attributes
         double[] timeValues = data.attributeToDoubleArray(data.attribute("Time").index());
@@ -260,14 +264,12 @@ public class DataPreprocessing {
         return data;
     }
 
-
     private static Instances checkMissingValue(Instances data) throws Exception {
-        // Perform data cleaning and preparation steps here (e.g., handle missing values, outliers, etc.)
-       // Step 1: Check for missing values
+        // Check for missing values
         if (hasMissingValues(data)) {
             System.out.println("Dataset contains missing values.");
 
-        // Replace missing values with mean
+            // Replace missing values with mean
             ReplaceMissingValues replaceMissing = new ReplaceMissingValues();
             replaceMissing.setInputFormat(data);
             data = Filter.useFilter(data, replaceMissing);
@@ -288,13 +290,8 @@ public class DataPreprocessing {
     }
     return false;
     }
-
-    
+   
     private static void performDataAnalysis(Instances data) {
-        
-        // Perform data analysis here (e.g., compute summary statistics, visualize data)
-        // This can include using libraries like Weka, JFreeChart, etc.
-        
         System.out.println("Data description:");
         for (int i = 0; i < data.numAttributes(); i++) {
             Attribute attribute = data.attribute(i);
@@ -321,7 +318,6 @@ public class DataPreprocessing {
             }
         }
         // Calculate the percentage of each class in the dataset
-
         data.setClassIndex(data.numAttributes() - 1);
         int numInstances = data.numInstances();
         int numFrauds = 0;
@@ -342,17 +338,11 @@ public class DataPreprocessing {
         double percentNonFrauds = (double) numNonFrauds / numInstances * 100;
         double percentFrauds = (double) numFrauds / numInstances * 100;
 
-            // Print the results
+        // Print the results
         System.out.println("Percentage of Non-Frauds: " + percentNonFrauds + "%");
         System.out.println("Percentage of Frauds: " + percentFrauds + "%"); 
         // Display the bar chart
-        JFrame frame = new JFrame("Bar Chart");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 500);
-
-        BarChart barChart = new BarChart(numNonFrauds, numFrauds);
-        frame.add(barChart);
-        frame.setVisible(true);        
+        displayDistributionPlot(data,"Class");      
     }
     private static void displayDistributionPlot(Instances data, String attributeName) {
         // Create a histogram dataset
@@ -386,7 +376,6 @@ public class DataPreprocessing {
         frame.setVisible(true);
     }
 
-
     public static void saveAsARFF(Instances data, String filename) throws Exception {
         ArffSaver saver = new ArffSaver();
         saver.setInstances(data);
@@ -395,12 +384,12 @@ public class DataPreprocessing {
         System.out.println("ARFF file saved successfully: " + filename);
     }
     public static String convertCSVtoARFF(String csvFile) throws Exception {
-        // Step 1: Load CSV data
+        // Load CSV data
         CSVLoader loader = new CSVLoader();
         loader.setSource(new File(csvFile));
         Instances data = loader.getDataSet();
 
-        // Step 2: Save as ARFF
+        // Save as ARFF
         String arffFilePath = csvFile.replace(".csv", ".arff");
         ArffSaver saver = new ArffSaver();
         saver.setInstances(data);

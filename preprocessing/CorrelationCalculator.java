@@ -15,7 +15,6 @@ public class CorrelationCalculator {
                 correlationMatrix[i][j] = calculateCorrelation(data, i, j);
             }
         }
-
         return correlationMatrix;
     }
 
@@ -48,7 +47,6 @@ public class CorrelationCalculator {
         if (denominator == 0) {
             return 0.0; // Return 0 if denominator is 0 to avoid division by zero
         }
-
         return numerator / denominator;
     }
 }

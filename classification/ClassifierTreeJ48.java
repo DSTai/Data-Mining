@@ -10,7 +10,7 @@ import weka.classifiers.trees.J48;
 import weka.core.SerializationHelper;
 
 
-//& 'C:\Program Files\Java\jdk-19\bin\java.exe' --add-opens java.base/java.lang=ALL-UNNAMED '@C:\Users\ttai2\AppData\Local\Temp\cp_69omvkzt9jf8hks5k0f23a1t5.argfile' 'classification.Classification' 
+//& 'C:\Program Files\Java\jdk-19\bin\java.exe' --add-opens java.base/java.lang=ALL-UNNAMED '@C:\Users\ttai2\AppData\Local\Temp\cp_ajod6srm5x4r5ffoofl25h39k.argfile' 'classification.ClassifierTreeJ48' 
 public class ClassifierTreeJ48 {
 
     public static void main(String[] args) throws Exception {

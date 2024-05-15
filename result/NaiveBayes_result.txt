@@ -1,0 +1,53 @@
+Naive Bayes Classifier:
+Capabilities: [Nominal attributes, Binary attributes, Unary attributes, Empty nominal attributes, Numeric attributes, Missing values, Nominal class, Binary class, Missing class values]
+Dependencies: []
+Interfaces: [WeightedAttributesHandler, WeightedInstancesHandler]
+Minimum number of instances: 0
+
+=== Summary ===
+
+Correctly Classified Instances       55716               97.8126 %
+Incorrectly Classified Instances      1246                2.1874 %
+Kappa statistic                          0.1071
+Mean absolute error                      0.0218
+Root mean squared error                  0.1459
+Relative absolute error                630.6914 %
+Root relative squared error            350.3295 %
+Total Number of Instances            56962     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.978    0.222    1.000      0.978    0.989      0.211    0.939     1.000     0
+                 0.778    0.022    0.059      0.778    0.110      0.211    0.947     0.074     1
+Weighted Avg.    0.978    0.222    0.998      0.978    0.987      0.211    0.939     0.998
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 55639  1224 |     a = 0
+    22    77 |     b = 1
+
+=== Summary 2nd Model ===
+
+Correctly Classified Instances         895               91.2334 %
+Incorrectly Classified Instances        86                8.7666 %
+Kappa statistic                          0.8246
+Mean absolute error                      0.0873
+Root mean squared error                  0.2922
+Relative absolute error                 17.461  %
+Root relative squared error             58.4498 %
+Total Number of Instances              981
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.961    0.137    0.876      0.961    0.917      0.829    0.958     0.946     0
+                 0.863    0.039    0.957      0.863    0.908      0.829    0.958     0.958     1
+Weighted Avg.    0.912    0.088    0.916      0.912    0.912      0.829    0.958     0.952
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 473  19 |   a = 0
+  67 422 |   b = 1
