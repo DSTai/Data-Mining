@@ -15,11 +15,9 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.statistics.HistogramDataset;
 import org.jfree.data.statistics.HistogramType;
-
-import filter.NumerictoNominal;
-
 import org.jfree.chart.plot.PlotOrientation;
 
+import filter.NumerictoNominal;
 
 import weka.core.Attribute;
 import weka.core.AttributeStats;
@@ -31,7 +29,7 @@ import weka.core.converters.CSVLoader;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.ReplaceMissingValues;
-//& 'C:\Program Files\Java\jdk-19\bin\java.exe' --add-opens java.base/java.lang=ALL-UNNAMED '@C:\Users\ttai2\AppData\Local\Temp\cp_69omvkzt9jf8hks5k0f23a1t5.argfile' 'preprocessing.DataPreprocessing' 
+
 public class DataPreprocessing {
     public static void main(String[] args) throws Exception {
         // Convert CSV to ARFF
@@ -98,12 +96,14 @@ public class DataPreprocessing {
         Instances rmV14Data = RemoveOutlier.removeFraudOutliers(subData,"V14");
  
         // Save the preprocessed data as ARFF file
+        saveAsARFF(scaledData, "D:\\Documents\\Downloads\\Weka project\\data\\creditcard_scaled.arff");
         saveAsARFF(trainData, "D:\\Documents\\Downloads\\Weka project\\data\\train_data.arff");
         saveAsARFF(testData, "D:\\Documents\\Downloads\\Weka project\\data\\test_data.arff");
         saveAsARFF(rmV10Data, "D:\\Documents\\Downloads\\Weka project\\data\\new_data.arff");
 
         ////////////////////////////////////////////////////////////////////////////
         //    After Preprocessing step, we will have 3 data files:                //
+        //        + creditcard_scaled.arff                                        //        
         //        + train_data.arff   ( 80% original data,                        //
         //        + test_data.arff      20% original data ) have same ratio:      //
         //                           No Fraud: 99.83% , Fraud: 0.17%              //
