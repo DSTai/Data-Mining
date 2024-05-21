@@ -14,18 +14,18 @@ public class AttrSelection {
         CfsSubsetEval eval = new CfsSubsetEval();
         GreedyStepwise search = new GreedyStepwise();
 
-        search.setSearchBackwards(true);
+        search.setSearchBackwards(false);
         filter.setEvaluator(eval);
         filter.setSearch(search);
         filter.setInputFormat(data);
 
         // apply
         Instances newData = Filter.useFilter(data, filter);
-        DataPreprocessing.saveAsARFF(newData,"D:\\Documents\\Downloads\\Weka project\\data\\attselect_data.arff");
+        DataPreprocessing.saveAsARFF(newData,"C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\att_select_org.arff");
         return newData;
     }
     public static void main(String[] args) throws Exception{
-        DataSource source = new DataSource("D:\\Documents\\Downloads\\Weka project\\data\\new_data.arff");
+        DataSource source = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\creditcard_scaled.arff");
         Instances dataset = source.getDataSet();
         AttriSelection(dataset);
     }

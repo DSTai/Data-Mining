@@ -7,385 +7,443 @@ Minimum number of instances: 0
 digraph J48Tree {
 N0 [label="V12" ]
 N0->N1 [label="<= -4.381078"]
-N1 [label="V11" ]
-N1->N2 [label="<= 0.636731"]
-N2 [label="0 (18.0)" shape=box style=filled ]
-N1->N3 [label="> 0.636731"]
-N3 [label="V9" ]
-N3->N4 [label="<= -4.037021"]
-N4 [label="1 (92.0)" shape=box style=filled ]
-N3->N5 [label="> -4.037021"]
-N5 [label="V27" ]
-N5->N6 [label="<= 1.693421"]
-N6 [label="V14" ]
-N6->N7 [label="<= -4.283734"]
-N7 [label="V20" ]
-N7->N8 [label="<= 0.567955"]
-N8 [label="V5" ]
-N8->N9 [label="<= 2.718787"]
-N9 [label="1 (90.0)" shape=box style=filled ]
-N8->N10 [label="> 2.718787"]
-N10 [label="V4" ]
-N10->N11 [label="<= 4.288779"]
-N11 [label="0 (2.0)" shape=box style=filled ]
-N10->N12 [label="> 4.288779"]
-N12 [label="1 (3.0)" shape=box style=filled ]
-N7->N13 [label="> 0.567955"]
-N13 [label="V15" ]
-N13->N14 [label="<= 0.924914"]
-N14 [label="V3" ]
-N14->N15 [label="<= -3.190709"]
-N15 [label="1 (38.0/1.0)" shape=box style=filled ]
-N14->N16 [label="> -3.190709"]
-N16 [label="0 (4.0/1.0)" shape=box style=filled ]
-N13->N17 [label="> 0.924914"]
-N17 [label="scaled_amount" ]
-N17->N18 [label="<= 1.109543"]
-N18 [label="0 (11.0/1.0)" shape=box style=filled ]
-N17->N19 [label="> 1.109543"]
-N19 [label="1 (2.0)" shape=box style=filled ]
-N6->N20 [label="> -4.283734"]
-N20 [label="V25" ]
-N20->N21 [label="<= 0.436587"]
-N21 [label="V28" ]
-N21->N22 [label="<= 0.366254"]
-N22 [label="V16" ]
-N22->N23 [label="<= -2.065649"]
-N23 [label="1 (10.0)" shape=box style=filled ]
-N22->N24 [label="> -2.065649"]
-N24 [label="0 (2.0)" shape=box style=filled ]
-N21->N25 [label="> 0.366254"]
-N25 [label="0 (4.0)" shape=box style=filled ]
-N20->N26 [label="> 0.436587"]
-N26 [label="0 (9.0)" shape=box style=filled ]
-N5->N27 [label="> 1.693421"]
-N27 [label="V15" ]
-N27->N28 [label="<= -0.117611"]
-N28 [label="0 (17.0)" shape=box style=filled ]
-N27->N29 [label="> -0.117611"]
-N29 [label="1 (7.0/1.0)" shape=box style=filled ]
-N0->N30 [label="> -4.381078"]
-N30 [label="V17" ]
-N30->N31 [label="<= -2.683521"]
-N31 [label="V12" ]
-N31->N32 [label="<= -2.180894"]
-N32 [label="V14" ]
-N32->N33 [label="<= -3.182168"]
-N33 [label="1 (57.0/1.0)" shape=box style=filled ]
-N32->N34 [label="> -3.182168"]
-N34 [label="0 (13.0/1.0)" shape=box style=filled ]
-N31->N35 [label="> -2.180894"]
-N35 [label="0 (31.0/1.0)" shape=box style=filled ]
-N30->N36 [label="> -2.683521"]
-N36 [label="V14" ]
-N36->N37 [label="<= -4.393634"]
-N37 [label="V10" ]
-N37->N38 [label="<= -1.844741"]
-N38 [label="V16" ]
-N38->N39 [label="<= 2.952051"]
+N1 [label="V3" ]
+N1->N2 [label="<= -1.200828"]
+N2 [label="V26" ]
+N2->N3 [label="<= -0.264474"]
+N3 [label="V26" ]
+N3->N4 [label="<= -0.333866"]
+N4 [label="1 (31.0/1.0)" shape=box style=filled ]
+N3->N5 [label="> -0.333866"]
+N5 [label="scaled_amount" ]
+N5->N6 [label="<= 1.145731"]
+N6 [label="V6" ]
+N6->N7 [label="<= -1.663784"]
+N7 [label="0 (28.0)" shape=box style=filled ]
+N6->N8 [label="> -1.663784"]
+N8 [label="1 (2.0)" shape=box style=filled ]
+N5->N9 [label="> 1.145731"]
+N9 [label="1 (6.0/1.0)" shape=box style=filled ]
+N2->N10 [label="> -0.264474"]
+N10 [label="V3" ]
+N10->N11 [label="<= -3.550435"]
+N11 [label="V25" ]
+N11->N12 [label="<= 1.072312"]
+N12 [label="1 (168.0)" shape=box style=filled ]
+N11->N13 [label="> 1.072312"]
+N13 [label="V5" ]
+N13->N14 [label="<= -22.756016"]
+N14 [label="0 (2.0)" shape=box style=filled ]
+N13->N15 [label="> -22.756016"]
+N15 [label="scaled_amount" ]
+N15->N16 [label="<= 0.523963"]
+N16 [label="V24" ]
+N16->N17 [label="<= -0.108093"]
+N17 [label="1 (11.0)" shape=box style=filled ]
+N16->N18 [label="> -0.108093"]
+N18 [label="0 (5.0/1.0)" shape=box style=filled ]
+N15->N19 [label="> 0.523963"]
+N19 [label="1 (13.0)" shape=box style=filled ]
+N10->N20 [label="> -3.550435"]
+N20 [label="scaled_time" ]
+N20->N21 [label="<= -0.137794"]
+N21 [label="1 (7.0)" shape=box style=filled ]
+N20->N22 [label="> -0.137794"]
+N22 [label="0 (6.0/1.0)" shape=box style=filled ]
+N1->N23 [label="> -1.200828"]
+N23 [label="V10" ]
+N23->N24 [label="<= -1.408697"]
+N24 [label="V1" ]
+N24->N25 [label="<= -1.488168"]
+N25 [label="1 (2.0)" shape=box style=filled ]
+N24->N26 [label="> -1.488168"]
+N26 [label="0 (2.0)" shape=box style=filled ]
+N23->N27 [label="> -1.408697"]
+N27 [label="0 (27.0)" shape=box style=filled ]
+N0->N28 [label="> -4.381078"]
+N28 [label="V17" ]
+N28->N29 [label="<= -2.577464"]
+N29 [label="V9" ]
+N29->N30 [label="<= 1.243706"]
+N30 [label="V14" ]
+N30->N31 [label="<= -3.182065"]
+N31 [label="1 (54.0/1.0)" shape=box style=filled ]
+N30->N32 [label="> -3.182065"]
+N32 [label="V9" ]
+N32->N33 [label="<= -2.173892"]
+N33 [label="V5" ]
+N33->N34 [label="<= -1.267591"]
+N34 [label="1 (4.0)" shape=box style=filled ]
+N33->N35 [label="> -1.267591"]
+N35 [label="0 (2.0)" shape=box style=filled ]
+N32->N36 [label="> -2.173892"]
+N36 [label="0 (19.0/1.0)" shape=box style=filled ]
+N29->N37 [label="> 1.243706"]
+N37 [label="0 (35.0)" shape=box style=filled ]
+N28->N38 [label="> -2.577464"]
+N38 [label="V14" ]
+N38->N39 [label="<= -4.393634"]
 N39 [label="V10" ]
-N39->N40 [label="<= -2.54312"]
-N40 [label="1 (21.0)" shape=box style=filled ]
-N39->N41 [label="> -2.54312"]
-N41 [label="V4" ]
-N41->N42 [label="<= 1.827593"]
+N39->N40 [label="<= -1.844736"]
+N40 [label="V16" ]
+N40->N41 [label="<= 2.951047"]
+N41 [label="V24" ]
+N41->N42 [label="<= -1.453815"]
 N42 [label="0 (4.0)" shape=box style=filled ]
-N41->N43 [label="> 1.827593"]
-N43 [label="V1" ]
-N43->N44 [label="<= -0.633538"]
-N44 [label="0 (2.0)" shape=box style=filled ]
-N43->N45 [label="> -0.633538"]
-N45 [label="1 (12.0)" shape=box style=filled ]
-N38->N46 [label="> 2.952051"]
-N46 [label="0 (8.0)" shape=box style=filled ]
-N37->N47 [label="> -1.844741"]
-N47 [label="0 (214.0/3.0)" shape=box style=filled ]
-N36->N48 [label="> -4.393634"]
-N48 [label="0 (227174.0/57.0)" shape=box style=filled ]
+N41->N43 [label="> -1.453815"]
+N43 [label="V4" ]
+N43->N44 [label="<= 1.079011"]
+N44 [label="0 (4.0/1.0)" shape=box style=filled ]
+N43->N45 [label="> 1.079011"]
+N45 [label="1 (33.0/1.0)" shape=box style=filled ]
+N40->N46 [label="> 2.951047"]
+N46 [label="0 (7.0)" shape=box style=filled ]
+N39->N47 [label="> -1.844736"]
+N47 [label="scaled_time" ]
+N47->N48 [label="<= 0.63293"]
+N48 [label="0 (177.0)" shape=box style=filled ]
+N47->N49 [label="> 0.63293"]
+N49 [label="V20" ]
+N49->N50 [label="<= -0.132511"]
+N50 [label="scaled_amount" ]
+N50->N51 [label="<= 4.597038"]
+N51 [label="1 (3.0)" shape=box style=filled ]
+N50->N52 [label="> 4.597038"]
+N52 [label="0 (2.0)" shape=box style=filled ]
+N49->N53 [label="> -0.132511"]
+N53 [label="0 (24.0/1.0)" shape=box style=filled ]
+N38->N54 [label="> -4.393634"]
+N54 [label="0 (227167.0/58.0)" shape=box style=filled ]
 }
 
 === Summary ===
 
-Correctly Classified Instances       56925               99.935  %
-Incorrectly Classified Instances        37                0.065  %
-Kappa statistic                          0.7858
-Mean absolute error                      0.0009
-Root mean squared error                  0.0252
-Relative absolute error                 26.7626 %
-Root relative squared error             60.4671 %
+Correctly Classified Instances       56934               99.9508 %
+Incorrectly Classified Instances        28                0.0492 %
+Kappa statistic                          0.8425
+Mean absolute error                      0.0008
+Root mean squared error                  0.0221
+Relative absolute error                 22.4422 %
+Root relative squared error             52.9847 %
 Total Number of Instances            56962
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    0.313    0.999      1.000    1.000      0.794    0.858     1.000     0
-                 0.687    0.000    0.919      0.687    0.786      0.794    0.858     0.702     1
-Weighted Avg.    0.999    0.313    0.999      0.999    0.999      0.794    0.858     0.999
+                 1.000    0.242    1.000      1.000    1.000      0.848    0.874     1.000     0
+                 0.758    0.000    0.949      0.758    0.843      0.848    0.874     0.723     1
+Weighted Avg.    1.000    0.242    0.999      1.000    0.999      0.848    0.874     0.999
 
 === Confusion Matrix ===
 
      a     b   <-- classified as
- 56857     6 |     a = 0
-    31    68 |     b = 1
+ 56859     4 |     a = 0
+    24    75 |     b = 1
 
 Tree J48 Classifier:
+Capabilities: [Nominal attributes, Binary attributes, Unary attributes, Empty nominal attributes, Numeric attributes, Date attributes, Missing values, Nominal class, Binary class, Missing class values]
+Dependencies: []
+Interfaces: [Drawable, PartitionGenerator, Sourcable, WeightedInstancesHandler]
+Minimum number of instances: 0
+
 digraph J48Tree {
 N0 [label="V14" ]
-N0->N1 [label="<= -1.633472"]
-N1 [label="V4" ]
-N1->N2 [label="<= 0.788357"]
-N2 [label="V5" ]
-N2->N3 [label="<= 0.518402"]
-N3 [label="1 (20.0/1.0)" shape=box style=filled ]
-N2->N4 [label="> 0.518402"]
-N4 [label="V15" ]
-N4->N5 [label="<= -0.578141"]
-N5 [label="1 (3.0)" shape=box style=filled ]
-N4->N6 [label="> -0.578141"]
-N6 [label="0 (11.0)" shape=box style=filled ]
-N1->N7 [label="> 0.788357"]
-N7 [label="1 (410.0/1.0)" shape=box style=filled ]
-N0->N8 [label="> -1.633472"]
-N8 [label="V4" ]
-N8->N9 [label="<= 1.391673"]
-N9 [label="V21" ]
-N9->N10 [label="<= 0.533521"]
-N10 [label="V14" ]
-N10->N11 [label="<= -0.43169"]
-N11 [label="scaled_time" ]
-N11->N12 [label="<= -0.078043"]
-N12 [label="scaled_time" ]
-N12->N13 [label="<= -0.472885"]
-N13 [label="0 (9.0)" shape=box style=filled ]
-N12->N14 [label="> -0.472885"]
-N14 [label="V13" ]
-N14->N15 [label="<= 1.01918"]
-N15 [label="V5" ]
-N15->N16 [label="<= -1.463255"]
-N16 [label="0 (2.0)" shape=box style=filled ]
-N15->N17 [label="> -1.463255"]
-N17 [label="V25" ]
-N17->N18 [label="<= 0.555398"]
-N18 [label="1 (10.0)" shape=box style=filled ]
-N17->N19 [label="> 0.555398"]
-N19 [label="0 (3.0/1.0)" shape=box style=filled ]
-N14->N20 [label="> 1.01918"]
-N20 [label="0 (4.0)" shape=box style=filled ]
-N11->N21 [label="> -0.078043"]
-N21 [label="0 (60.0/2.0)" shape=box style=filled ]
-N10->N22 [label="> -0.43169"]
-N22 [label="scaled_amount" ]
-N22->N23 [label="<= 4.695962"]
-N23 [label="0 (317.0/2.0)" shape=box style=filled ]
-N22->N24 [label="> 4.695962"]
-N24 [label="V7" ]
-N24->N25 [label="<= 2.445763"]
-N25 [label="0 (17.0/1.0)" shape=box style=filled ]
-N24->N26 [label="> 2.445763"]
-N26 [label="1 (3.0)" shape=box style=filled ]
-N9->N27 [label="> 0.533521"]
-N27 [label="V13" ]
-N27->N28 [label="<= -1.304745"]
-N28 [label="1 (6.0)" shape=box style=filled ]
-N27->N29 [label="> -1.304745"]
-N29 [label="0 (17.0/1.0)" shape=box style=filled ]
-N8->N30 [label="> 1.391673"]
-N30 [label="V12" ]
-N30->N31 [label="<= -0.56738"]
-N31 [label="V11" ]
-N31->N32 [label="<= -1.349438"]
-N32 [label="0 (6.0/1.0)" shape=box style=filled ]
-N31->N33 [label="> -1.349438"]
-N33 [label="V3" ]
-N33->N34 [label="<= 1.324481"]
-N34 [label="1 (21.0)" shape=box style=filled ]
-N33->N35 [label="> 1.324481"]
-N35 [label="0 (3.0/1.0)" shape=box style=filled ]
-N30->N36 [label="> -0.56738"]
-N36 [label="scaled_amount" ]
-N36->N37 [label="<= -0.178706"]
-N37 [label="1 (3.0)" shape=box style=filled ]
-N36->N38 [label="> -0.178706"]
-N38 [label="V17" ]
-N38->N39 [label="<= 1.632009"]
-N39 [label="0 (52.0/3.0)" shape=box style=filled ]
-N38->N40 [label="> 1.632009"]
-N40 [label="1 (4.0/1.0)" shape=box style=filled ]
+N0->N1 [label="<= -3.415152"]
+N1 [label="1 (320.0/2.0)" shape=box style=filled ]
+N0->N2 [label="> -3.415152"]
+N2 [label="V4" ]
+N2->N3 [label="<= 1.657766"]
+N3 [label="scaled_amount" ]
+N3->N4 [label="<= 3.118905"]
+N4 [label="0 (368.0/22.0)" shape=box style=filled ]
+N3->N5 [label="> 3.118905"]
+N5 [label="V7" ]
+N5->N6 [label="<= 0.691123"]
+N6 [label="0 (10.0)" shape=box style=filled ]
+N5->N7 [label="> 0.691123"]
+N7 [label="V15" ]
+N7->N8 [label="<= -0.684609"]
+N8 [label="0 (4.0)" shape=box style=filled ]
+N7->N9 [label="> -0.684609"]
+N9 [label="V18" ]
+N9->N10 [label="<= 0.324119"]
+N10 [label="V17" ]
+N10->N11 [label="<= -0.207707"]
+N11 [label="1 (3.0)" shape=box style=filled ]
+N10->N12 [label="> -0.207707"]
+N12 [label="0 (5.0)" shape=box style=filled ]
+N9->N13 [label="> 0.324119"]
+N13 [label="1 (9.0)" shape=box style=filled ]
+N2->N14 [label="> 1.657766"]
+N14 [label="V14" ]
+N14->N15 [label="<= -0.658246"]
+N15 [label="V6" ]
+N15->N16 [label="<= 1.632087"]
+N16 [label="1 (24.0)" shape=box style=filled ]
+N15->N17 [label="> 1.632087"]
+N17 [label="0 (2.0)" shape=box style=filled ]
+N14->N18 [label="> -0.658246"]
+N18 [label="V19" ]
+N18->N19 [label="<= -1.466911"]
+N19 [label="1 (7.0)" shape=box style=filled ]
+N18->N20 [label="> -1.466911"]
+N20 [label="V20" ]
+N20->N21 [label="<= 0.217265"]
+N21 [label="scaled_time" ]
+N21->N22 [label="<= -0.420677"]
+N22 [label="V14" ]
+N22->N23 [label="<= 0.116303"]
+N23 [label="1 (3.0)" shape=box style=filled ]
+N22->N24 [label="> 0.116303"]
+N24 [label="0 (4.0)" shape=box style=filled ]
+N21->N25 [label="> -0.420677"]
+N25 [label="0 (19.0)" shape=box style=filled ]
+N20->N26 [label="> 0.217265"]
+N26 [label="1 (6.0/1.0)" shape=box style=filled ]
 }
 
 === Summary 2nd Model ===
 
-Correctly Classified Instances         910               92.7625 %
-Incorrectly Classified Instances        71                7.2375 %
-Kappa statistic                          0.8552
-Mean absolute error                      0.0786
-Root mean squared error                  0.2637
-Relative absolute error                 15.722  %
-Root relative squared error             52.743  %
-Total Number of Instances              981
+Correctly Classified Instances         185               93.9086 %
+Incorrectly Classified Instances        12                6.0914 %
+Kappa statistic                          0.8781
+Mean absolute error                      0.0875
+Root mean squared error                  0.2422
+Relative absolute error                 17.498  %
+Root relative squared error             48.4445 %
+Total Number of Instances              197
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.937    0.082    0.920      0.937    0.928      0.855    0.921     0.881     0
-                 0.918    0.063    0.935      0.918    0.927      0.855    0.921     0.903     1
-Weighted Avg.    0.928    0.072    0.928      0.928    0.928      0.855    0.921     0.892
+                 0.970    0.092    0.914      0.970    0.941      0.880    0.916     0.881     0
+                 0.908    0.030    0.967      0.908    0.937      0.880    0.916     0.921     1
+Weighted Avg.    0.939    0.061    0.941      0.939    0.939      0.880    0.916     0.900
 
 === Confusion Matrix ===
 
-   a   b   <-- classified as
- 461  31 |   a = 0
-  40 449 |   b = 1
-
-Runtime (seconds): 0.323
+  a  b   <-- classified as
+ 96  3 |  a = 0
+  9 89 |  b = 1
 
 Tree J48 Classifier:
 digraph J48Tree {
 N0 [label="V12" ]
 N0->N1 [label="<= -4.381078"]
-N1 [label="V11" ]
-N1->N2 [label="<= 0.636731"]
-N2 [label="0 (25.0)" shape=box style=filled ]
-N1->N3 [label="> 0.636731"]
+N1 [label="V3" ]
+N1->N2 [label="<= -1.200828"]
+N2 [label="V26" ]
+N2->N3 [label="<= -0.264474"]
 N3 [label="V26" ]
-N3->N4 [label="<= -0.264474"]
-N4 [label="V26" ]
-N4->N5 [label="<= -0.33386"]
-N5 [label="V9" ]
-N5->N6 [label="<= 2.209475"]
-N6 [label="1 (42.0)" shape=box style=filled ]
-N5->N7 [label="> 2.209475"]
-N7 [label="0 (4.0/1.0)" shape=box style=filled ]
-N4->N8 [label="> -0.33386"]
-N8 [label="scaled_amount" ]
-N8->N9 [label="<= 1.145731"]
-N9 [label="V6" ]
-N9->N10 [label="<= -1.663766"]
-N10 [label="0 (34.0)" shape=box style=filled ]
-N9->N11 [label="> -1.663766"]
-N11 [label="1 (2.0)" shape=box style=filled ]
-N8->N12 [label="> 1.145731"]
-N12 [label="1 (7.0/1.0)" shape=box style=filled ]
-N3->N13 [label="> -0.264474"]
-N13 [label="V14" ]
-N13->N14 [label="<= -6.065622"]
-N14 [label="V25" ]
-N14->N15 [label="<= 1.072312"]
-N15 [label="1 (193.0/1.0)" shape=box style=filled ]
-N14->N16 [label="> 1.072312"]
-N16 [label="V15" ]
-N16->N17 [label="<= 0.962191"]
-N17 [label="V19" ]
-N17->N18 [label="<= 1.334391"]
-N18 [label="1 (26.0)" shape=box style=filled ]
-N17->N19 [label="> 1.334391"]
-N19 [label="scaled_amount" ]
-N19->N20 [label="<= 0.523963"]
-N20 [label="0 (2.0)" shape=box style=filled ]
-N19->N21 [label="> 0.523963"]
-N21 [label="1 (2.0)" shape=box style=filled ]
-N16->N22 [label="> 0.962191"]
-N22 [label="0 (2.0)" shape=box style=filled ]
-N13->N23 [label="> -6.065622"]
-N23 [label="V28" ]
-N23->N24 [label="<= 0.41259"]
-N24 [label="V17" ]
-N24->N25 [label="<= -0.355273"]
-N25 [label="V4" ]
-N25->N26 [label="<= 1.16619"]
-N26 [label="0 (5.0/1.0)" shape=box style=filled ]
-N25->N27 [label="> 1.16619"]
-N27 [label="V1" ]
-N27->N28 [label="<= -31.746663"]
-N28 [label="0 (2.0)" shape=box style=filled ]
-N27->N29 [label="> -31.746663"]
-N29 [label="1 (31.0/1.0)" shape=box style=filled ]
-N24->N30 [label="> -0.355273"]
-N30 [label="0 (4.0)" shape=box style=filled ]
-N23->N31 [label="> 0.41259"]
-N31 [label="0 (6.0)" shape=box style=filled ]
-N0->N32 [label="> -4.381078"]
-N32 [label="V17" ]
-N32->N33 [label="<= -2.577464"]
-N33 [label="V10" ]
-N33->N34 [label="<= -1.617232"]
-N34 [label="V14" ]
-N34->N35 [label="<= -3.093889"]
-N35 [label="1 (64.0/1.0)" shape=box style=filled ]
-N34->N36 [label="> -3.093889"]
-N36 [label="V4" ]
-N36->N37 [label="<= 1.400315"]
-N37 [label="0 (11.0)" shape=box style=filled ]
-N36->N38 [label="> 1.400315"]
-N38 [label="V11" ]
-N38->N39 [label="<= 2.118353"]
-N39 [label="1 (4.0)" shape=box style=filled ]
-N38->N40 [label="> 2.118353"]
-N40 [label="0 (6.0/1.0)" shape=box style=filled ]
-N33->N41 [label="> -1.617232"]
-N41 [label="V16" ]
-N41->N42 [label="<= -2.890992"]
-N42 [label="1 (4.0/1.0)" shape=box style=filled ]
-N41->N43 [label="> -2.890992"]
-N43 [label="0 (49.0)" shape=box style=filled ]
-N32->N44 [label="> -2.577464"]
-N44 [label="V14" ]
-N44->N45 [label="<= -4.393634"]
-N45 [label="V10" ]
-N45->N46 [label="<= -1.844736"]
-N46 [label="V16" ]
-N46->N47 [label="<= 2.952051"]
-N47 [label="V24" ]
-N47->N48 [label="<= -1.453815"]
-N48 [label="0 (4.0)" shape=box style=filled ]
-N47->N49 [label="> -1.453815"]
-N49 [label="V4" ]
-N49->N50 [label="<= 1.079011"]
-N50 [label="0 (4.0/1.0)" shape=box style=filled ]
-N49->N51 [label="> 1.079011"]
-N51 [label="1 (38.0/1.0)" shape=box style=filled ]
-N46->N52 [label="> 2.952051"]
-N52 [label="0 (9.0)" shape=box style=filled ]
-N45->N53 [label="> -1.844736"]
-N53 [label="V4" ]
-N53->N54 [label="<= 4.501147"]
-N54 [label="0 (221.0)" shape=box style=filled ]
-N53->N55 [label="> 4.501147"]
-N55 [label="V4" ]
-N55->N56 [label="<= 4.643147"]
-N56 [label="1 (2.0)" shape=box style=filled ]
-N55->N57 [label="> 4.643147"]
-N57 [label="V16" ]
-N57->N58 [label="<= 0.633086"]
-N58 [label="1 (2.0)" shape=box style=filled ]
-N57->N59 [label="> 0.633086"]
-N59 [label="0 (35.0)" shape=box style=filled ]
-N44->N60 [label="> -4.393634"]
-N60 [label="0 (283967.0/77.0)" shape=box style=filled ]
+N3->N4 [label="<= -0.333866"]
+N4 [label="1 (31.0/1.0)" shape=box style=filled ]
+N3->N5 [label="> -0.333866"]
+N5 [label="scaled_amount" ]
+N5->N6 [label="<= 1.145731"]
+N6 [label="V6" ]
+N6->N7 [label="<= -1.663784"]
+N7 [label="0 (28.0)" shape=box style=filled ]
+N6->N8 [label="> -1.663784"]
+N8 [label="1 (2.0)" shape=box style=filled ]
+N5->N9 [label="> 1.145731"]
+N9 [label="1 (6.0/1.0)" shape=box style=filled ]
+N2->N10 [label="> -0.264474"]
+N10 [label="V3" ]
+N10->N11 [label="<= -3.550435"]
+N11 [label="V25" ]
+N11->N12 [label="<= 1.072312"]
+N12 [label="1 (168.0)" shape=box style=filled ]
+N11->N13 [label="> 1.072312"]
+N13 [label="V5" ]
+N13->N14 [label="<= -22.756016"]
+N14 [label="0 (2.0)" shape=box style=filled ]
+N13->N15 [label="> -22.756016"]
+N15 [label="scaled_amount" ]
+N15->N16 [label="<= 0.523963"]
+N16 [label="V24" ]
+N16->N17 [label="<= -0.108093"]
+N17 [label="1 (11.0)" shape=box style=filled ]
+N16->N18 [label="> -0.108093"]
+N18 [label="0 (5.0/1.0)" shape=box style=filled ]
+N15->N19 [label="> 0.523963"]
+N19 [label="1 (13.0)" shape=box style=filled ]
+N10->N20 [label="> -3.550435"]
+N20 [label="scaled_time" ]
+N20->N21 [label="<= -0.137794"]
+N21 [label="1 (7.0)" shape=box style=filled ]
+N20->N22 [label="> -0.137794"]
+N22 [label="0 (6.0/1.0)" shape=box style=filled ]
+N1->N23 [label="> -1.200828"]
+N23 [label="V10" ]
+N23->N24 [label="<= -1.408697"]
+N24 [label="V1" ]
+N24->N25 [label="<= -1.488168"]
+N25 [label="1 (2.0)" shape=box style=filled ]
+N24->N26 [label="> -1.488168"]
+N26 [label="0 (2.0)" shape=box style=filled ]
+N23->N27 [label="> -1.408697"]
+N27 [label="0 (27.0)" shape=box style=filled ]
+N0->N28 [label="> -4.381078"]
+N28 [label="V17" ]
+N28->N29 [label="<= -2.577464"]
+N29 [label="V9" ]
+N29->N30 [label="<= 1.243706"]
+N30 [label="V14" ]
+N30->N31 [label="<= -3.182065"]
+N31 [label="1 (54.0/1.0)" shape=box style=filled ]
+N30->N32 [label="> -3.182065"]
+N32 [label="V9" ]
+N32->N33 [label="<= -2.173892"]
+N33 [label="V5" ]
+N33->N34 [label="<= -1.267591"]
+N34 [label="1 (4.0)" shape=box style=filled ]
+N33->N35 [label="> -1.267591"]
+N35 [label="0 (2.0)" shape=box style=filled ]
+N32->N36 [label="> -2.173892"]
+N36 [label="0 (19.0/1.0)" shape=box style=filled ]
+N29->N37 [label="> 1.243706"]
+N37 [label="0 (35.0)" shape=box style=filled ]
+N28->N38 [label="> -2.577464"]
+N38 [label="V14" ]
+N38->N39 [label="<= -4.393634"]
+N39 [label="V10" ]
+N39->N40 [label="<= -1.844736"]
+N40 [label="V16" ]
+N40->N41 [label="<= 2.951047"]
+N41 [label="V24" ]
+N41->N42 [label="<= -1.453815"]
+N42 [label="0 (4.0)" shape=box style=filled ]
+N41->N43 [label="> -1.453815"]
+N43 [label="V4" ]
+N43->N44 [label="<= 1.079011"]
+N44 [label="0 (4.0/1.0)" shape=box style=filled ]
+N43->N45 [label="> 1.079011"]
+N45 [label="1 (33.0/1.0)" shape=box style=filled ]
+N40->N46 [label="> 2.951047"]
+N46 [label="0 (7.0)" shape=box style=filled ]
+N39->N47 [label="> -1.844736"]
+N47 [label="scaled_time" ]
+N47->N48 [label="<= 0.63293"]
+N48 [label="0 (177.0)" shape=box style=filled ]
+N47->N49 [label="> 0.63293"]
+N49 [label="V20" ]
+N49->N50 [label="<= -0.132511"]
+N50 [label="scaled_amount" ]
+N50->N51 [label="<= 4.597038"]
+N51 [label="1 (3.0)" shape=box style=filled ]
+N50->N52 [label="> 4.597038"]
+N52 [label="0 (2.0)" shape=box style=filled ]
+N49->N53 [label="> -0.132511"]
+N53 [label="0 (24.0/1.0)" shape=box style=filled ]
+N38->N54 [label="> -4.393634"]
+N54 [label="0 (227167.0/58.0)" shape=box style=filled ]
 }
 
-=== Summary Model Evaluation ===
+=== Summary 3rd Model Evaluation===
 
-Correctly Classified Instances      284667               99.9508 %
-Incorrectly Classified Instances       140                0.0492 %
-Kappa statistic                          0.8449
+Correctly Classified Instances      227724               99.9469 %
+Incorrectly Classified Instances       121                0.0531 %
+Kappa statistic                          0.8328
 Mean absolute error                      0.0008
-Root mean squared error                  0.022 
-Relative absolute error                 22.7037 %
-Root relative squared error             53.0128 %
-Total Number of Instances           284807
+Root mean squared error                  0.0227
+Relative absolute error                 23.344  %
+Root relative squared error             54.6415 %
+Total Number of Instances           227845
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    0.224    1.000      1.000    1.000      0.848    0.869     0.999     0
-                 0.776    0.000    0.927      0.776    0.845      0.848    0.869     0.743     1
-Weighted Avg.    1.000    0.223    0.999      1.000    0.999      0.848    0.869     0.999
+                 1.000    0.232    1.000      1.000    1.000      0.836    0.857     0.999     0
+                 0.768    0.000    0.910      0.768    0.833      0.836    0.857     0.753     1
+Weighted Avg.    0.999    0.231    0.999      0.999    0.999      0.836    0.857     0.999
 
 === Confusion Matrix ===
 
       a      b   <-- classified as
- 284285     30 |      a = 0
-    110    382 |      b = 1
+ 227422     30 |      a = 0
+     91    302 |      b = 1
 
-Runtime (seconds): 418.278
+Runtime (seconds): 243.667
+
+Tree J48 Classifier:
+digraph J48Tree {
+N0 [label="V14" ]
+N0->N1 [label="<= -3.415152"]
+N1 [label="1 (320.0/2.0)" shape=box style=filled ]
+N0->N2 [label="> -3.415152"]
+N2 [label="V4" ]
+N2->N3 [label="<= 1.657766"]
+N3 [label="scaled_amount" ]
+N3->N4 [label="<= 3.118905"]
+N4 [label="0 (368.0/22.0)" shape=box style=filled ]
+N3->N5 [label="> 3.118905"]
+N5 [label="V7" ]
+N5->N6 [label="<= 0.691123"]
+N6 [label="0 (10.0)" shape=box style=filled ]
+N5->N7 [label="> 0.691123"]
+N7 [label="V15" ]
+N7->N8 [label="<= -0.684609"]
+N8 [label="0 (4.0)" shape=box style=filled ]
+N7->N9 [label="> -0.684609"]
+N9 [label="V18" ]
+N9->N10 [label="<= 0.324119"]
+N10 [label="V17" ]
+N10->N11 [label="<= -0.207707"]
+N11 [label="1 (3.0)" shape=box style=filled ]
+N10->N12 [label="> -0.207707"]
+N12 [label="0 (5.0)" shape=box style=filled ]
+N9->N13 [label="> 0.324119"]
+N13 [label="1 (9.0)" shape=box style=filled ]
+N2->N14 [label="> 1.657766"]
+N14 [label="V14" ]
+N14->N15 [label="<= -0.658246"]
+N15 [label="V6" ]
+N15->N16 [label="<= 1.632087"]
+N16 [label="1 (24.0)" shape=box style=filled ]
+N15->N17 [label="> 1.632087"]
+N17 [label="0 (2.0)" shape=box style=filled ]
+N14->N18 [label="> -0.658246"]
+N18 [label="V19" ]
+N18->N19 [label="<= -1.466911"]
+N19 [label="1 (7.0)" shape=box style=filled ]
+N18->N20 [label="> -1.466911"]
+N20 [label="V20" ]
+N20->N21 [label="<= 0.217265"]
+N21 [label="scaled_time" ]
+N21->N22 [label="<= -0.420677"]
+N22 [label="V14" ]
+N22->N23 [label="<= 0.116303"]
+N23 [label="1 (3.0)" shape=box style=filled ]
+N22->N24 [label="> 0.116303"]
+N24 [label="0 (4.0)" shape=box style=filled ]
+N21->N25 [label="> -0.420677"]
+N25 [label="0 (19.0)" shape=box style=filled ]
+N20->N26 [label="> 0.217265"]
+N26 [label="1 (6.0/1.0)" shape=box style=filled ]
+}
+
+=== Summary 4th Model Evaluation ===
+
+Correctly Classified Instances         715               91.199  %
+Incorrectly Classified Instances        69                8.801  %
+Kappa statistic                          0.824
+Mean absolute error                      0.098
+Root mean squared error                  0.2879
+Relative absolute error                 19.5906 %
+Root relative squared error             57.5859 %
+Total Number of Instances              784
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.926    0.102    0.901      0.926    0.913      0.824    0.905     0.873     0
+                 0.898    0.074    0.924      0.898    0.911      0.824    0.905     0.857     1
+Weighted Avg.    0.912    0.088    0.912      0.912    0.912      0.824    0.905     0.865
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 364  29 |   a = 0
+  40 351 |   b = 1
+
+Runtime (seconds): 0.15

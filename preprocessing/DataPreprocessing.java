@@ -33,7 +33,7 @@ import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 public class DataPreprocessing {
     public static void main(String[] args) throws Exception {
         // Convert CSV to ARFF
-        String arffFilePath = convertCSVtoARFF("D:\\Documents\\Downloads\\Weka project\\data\\creditcard.csv");
+        String arffFilePath = convertCSVtoARFF("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\creditcard.csv");
         // Read the raw dataset
         DataSource source = new DataSource(arffFilePath);
         Instances data = source.getDataSet();
@@ -72,14 +72,14 @@ public class DataPreprocessing {
         double[][] corrMatrix1 = CorrelationCalculator.calculateCorrelationMatrix(subData);
 
         //dont use for reference (high class imbalance)
-        //double[][] corrMatrix2 = CorrelationCalculator.calculateCorrelationMatrix(scaledData);
+        double[][] corrMatrix2 = CorrelationCalculator.calculateCorrelationMatrix(scaledData);
         
         String[] attributeNames = {
             "scaled_amount","scaled_time", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10",
             "V11", "V12", "V13", "V14", "V15", "V16", "V17", "V18", "V19", "V20",
             "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28",  "Class"
         };
-        //CorrelationHeatmap.visualize(attributeNames,corrMatrix2);
+        CorrelationHeatmap.visualize(attributeNames,corrMatrix2);
         CorrelationHeatmap.visualize(attributeNames,corrMatrix1);
 
         //Class Negative Correlation
@@ -94,20 +94,29 @@ public class DataPreprocessing {
         Instances rmV10Data = RemoveOutlier.removeFraudOutliers(subData,"V10");// have 3 outliers
         Instances rmV12Data = RemoveOutlier.removeFraudOutliers(subData,"V12");
         Instances rmV14Data = RemoveOutlier.removeFraudOutliers(subData,"V14");
- 
+
+        // Splitting the sub Data
+        Instances[] splitSubData = splitData(rmV10Data);
+        Instances trainSubData = splitSubData[0];
+        Instances testSubData = splitSubData[1];
+        printLabelDistributions(trainSubData,testSubData);  
+
         // Save the preprocessed data as ARFF file
-        saveAsARFF(scaledData, "D:\\Documents\\Downloads\\Weka project\\data\\creditcard_scaled.arff");
-        saveAsARFF(trainData, "D:\\Documents\\Downloads\\Weka project\\data\\train_data.arff");
-        saveAsARFF(testData, "D:\\Documents\\Downloads\\Weka project\\data\\test_data.arff");
-        saveAsARFF(rmV10Data, "D:\\Documents\\Downloads\\Weka project\\data\\new_data.arff");
+        saveAsARFF(rmV10Data, "C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\subsample.arff");
+        saveAsARFF(scaledData, "C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\creditcard_scaled.arff");
+    //    saveAsARFF(trainData, "C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\train_data.arff");
+    //    saveAsARFF(testData, "C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\test_data.arff");
+    //    saveAsARFF(trainSubData, "C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\train_sub_data.arff");
+    //    saveAsARFF(testSubData, "C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\test_sub_data.arff");
 
         ////////////////////////////////////////////////////////////////////////////
-        //    After Preprocessing step, we will have 3 data files:                //
-        //        + creditcard_scaled.arff                                        //        
+        //    After Preprocessing step, we will have 4 data files:                //
+        //                                                                        //        
         //        + train_data.arff   ( 80% original data,                        //
         //        + test_data.arff      20% original data ) have same ratio:      //
         //                           No Fraud: 99.83% , Fraud: 0.17%              //
-        //        + new_data.arff   (sub-sample 50/50 ratio)                      //
+        //        + train_sub_data.arff   (sub-sample 50/50 ratio)                //
+        //        + test_sub_data.arff   (sub-sample 50/50 ratio)                 //
         ////////////////////////////////////////////////////////////////////////////
     }
     

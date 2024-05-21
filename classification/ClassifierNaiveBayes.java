@@ -2,6 +2,7 @@ package classification;
 
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
+import preprocessing.DataPreprocessing;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
@@ -9,65 +10,104 @@ import weka.core.SerializationHelper;
  
 public class ClassifierNaiveBayes {
 
-    public static void main(String[] args) throws Exception {
-        // Load the ARFF file for original data for cross-validation
-        DataSource sourceOrg = new DataSource("D:\\Documents\\Downloads\\Weka project\\data\\creditcard_scaled.arff");
-        Instances orgData = sourceOrg.getDataSet();
-        orgData.setClassIndex(orgData.numAttributes() - 1);     
+    public static void main(String[] args) throws Exception {  
+        DataSource sourceAtt = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\att_select_org.arff");
+        Instances AttData = sourceAtt.getDataSet();
+        AttData.setClassIndex(AttData.numAttributes() - 1);
 
+        
+        DataSource sourceAttSub = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\att_select_sub.arff");
+        Instances AttSubData = sourceAttSub.getDataSet();
+        AttSubData.setClassIndex(AttSubData.numAttributes() - 1);  
+
+        // Splitting the sub Data
+        Instances[] splitSubData = DataPreprocessing.splitData(AttData);
+        Instances trainAtt = splitSubData[0];
+        Instances testAtt = splitSubData[1];
+
+        Instances[] splitSubData2 = DataPreprocessing.splitData(AttSubData);
+        Instances trainAttSub = splitSubData2[0];
+        Instances testAttSub = splitSubData2[1];
         // Load the ARFF file for training data
-        DataSource sourceTrain = new DataSource("D:\\Documents\\Downloads\\Weka project\\data\\train_data.arff");
+        DataSource sourceTrain = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\train_data.arff");
         Instances trainData = sourceTrain.getDataSet();
         trainData.setClassIndex(trainData.numAttributes() - 1);
 
         // Load the ARFF file for test data
-        DataSource sourceTest = new DataSource("D:\\Documents\\Downloads\\Weka project\\data\\test_data.arff");
+        DataSource sourceTest = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\test_data.arff");
         Instances testData = sourceTest.getDataSet();
         testData.setClassIndex(testData.numAttributes() - 1);
 
-        // Load the ARFF file for new data
-        DataSource sourceNew = new DataSource("D:\\Documents\\Downloads\\Weka project\\data\\new_data.arff");
-        Instances newData = sourceNew.getDataSet();
-        newData.setClassIndex(newData.numAttributes() - 1);
+        // Load the ARFF file for train sub data
+        DataSource sourcetrainSub = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\train_sub_data.arff");
+        Instances trainSubData = sourcetrainSub.getDataSet();
+        trainSubData.setClassIndex(trainSubData.numAttributes() - 1);
+
+        // Load the ARFF file for test sub data
+        DataSource sourcetestSub = new DataSource("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\data\\test_sub_data.arff");
+        Instances testSubData = sourcetestSub.getDataSet();
+        testSubData.setClassIndex(testSubData.numAttributes() - 1);   
         //////////////////////////////////////////////////////////////////
         //               FIRST MODEL FOR TRAIN DATA                     //
         //////////////////////////////////////////////////////////////////   
         // Naive Bayes Classifier
         NaiveBayes naiveBayes = new NaiveBayes(); // Create an instance of Naive Bayes
-        naiveBayes.buildClassifier(trainData);
+        naiveBayes.buildClassifier(trainAtt);
         System.out.println("Naive Bayes Classifier:");
         System.out.println(naiveBayes.getCapabilities().toString());
 
         // Save the trained model
-        SerializationHelper.write("D:\\Documents\\Downloads\\Weka project\\models\\naiveBayes_model.model", naiveBayes);
+        SerializationHelper.write("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_model.model", naiveBayes);
 
         // Load the trained model
-        Classifier classifier = (Classifier) SerializationHelper.read("D:\\Documents\\Downloads\\Weka project\\models\\naiveBayes_model.model");
+        Classifier classifier = (Classifier) SerializationHelper.read("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_model.model");
 
         // Evaluate the model
-        Evaluation eval = new Evaluation(trainData);
-        eval.evaluateModel(classifier, testData);
+        Evaluation eval = new Evaluation(trainAtt);
+        eval.evaluateModel(classifier, testAtt);
         System.out.println(eval.toSummaryString("=== Summary ===\n", false));
         System.out.println(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
         System.out.println(eval.toMatrixString("=== Confusion Matrix ===\n"));
 
         //////////////////////////////////////////////////////////////////
-        //               SECOND MODEL FOR NEW DATA                     //
-        /////////////////////////////////////////////////////////////////
-        // Train a new Naive Bayes model
-        NaiveBayes naiveBayes2 = new NaiveBayes();
-        naiveBayes2.buildClassifier(newData);
+        //               SECOND MODEL FOR TRAIN Sub DATA                //
+        //////////////////////////////////////////////////////////////////   
+        // Naive Bayes Classifier
+        NaiveBayes naiveBayes2 = new NaiveBayes(); // Create an instance of Naive Bayes
+        naiveBayes2.buildClassifier(trainAttSub);
+        System.out.println("Naive Bayes Classifier:");
+        System.out.println(naiveBayes2.getCapabilities().toString());
 
         // Save the trained model
-        SerializationHelper.write("D:\\Documents\\Downloads\\Weka project\\models\\naiveBayes_model2.model", naiveBayes2);
+        SerializationHelper.write("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_model2.model", naiveBayes2);
 
         // Load the trained model
-        NaiveBayes loadedNaiveBayes2 = (NaiveBayes) SerializationHelper.read("D:\\Documents\\Downloads\\Weka project\\models\\naiveBayes_model2.model");
+        Classifier classifier2 = (Classifier) SerializationHelper.read("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_model2.model");
+
+        // Evaluate the model
+        Evaluation eval2 = new Evaluation(trainAttSub);
+        eval2.evaluateModel(classifier2, testAttSub);
+        System.out.println(eval2.toSummaryString("=== Summary 2nd Model ===\n", false));
+        System.out.println(eval2.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
+        System.out.println(eval2.toMatrixString("=== Confusion Matrix ===\n"));
+
+        //////////////////////////////////////////////////////////////////
+        //               3rd MODEL EVALUATION USING 10FCV              //
+        /////////////////////////////////////////////////////////////////
+        // Train a new Naive Bayes model
+        NaiveBayes naiveBayes3 = new NaiveBayes();
+        naiveBayes3.buildClassifier(trainAtt);
+
+        // Save the trained model
+        SerializationHelper.write("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_10fcv1.model", naiveBayes3);
+
+        // Load the trained model
+        NaiveBayes loadedNaiveBayes3 = (NaiveBayes) SerializationHelper.read("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_10fcv1.model");
 
         // Evaluate the model using cross-validation
         long startTime = System.currentTimeMillis(); // Record start time
-        Evaluation eval2 = new Evaluation(newData);
-        eval2.crossValidateModel(loadedNaiveBayes2, newData, 10, new java.util.Random(1));
+        Evaluation eval3 = new Evaluation(trainAtt);
+        eval3.crossValidateModel(loadedNaiveBayes3, trainAtt, 10, new java.util.Random(1));
         long endTime = System.currentTimeMillis(); // Record end time
 
         // Calculate runtime
@@ -75,38 +115,38 @@ public class ClassifierNaiveBayes {
         double runtimeSeconds = runtimeMillis / 1000.0;     
 
         // Print summary for the second model
-        System.out.println(eval2.toSummaryString("=== Summary 2nd Model ===\n", false));
-        System.out.println(eval2.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-        System.out.println(eval2.toMatrixString("=== Confusion Matrix ===\n")); 
+        System.out.println(eval3.toSummaryString("=== Summary 3rd Model Evaluation===\n", false));
+        System.out.println(eval3.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
+        System.out.println(eval3.toMatrixString("=== Confusion Matrix ===\n")); 
         System.out.println("Runtime (seconds): " + runtimeSeconds);
 
         //////////////////////////////////////////////////////////////////
         //               MODEL EVALUATION USING 10FCV                   //
         //////////////////////////////////////////////////////////////////
         // Train a new Naive Bayes model
-        NaiveBayes naiveBayes3 = new NaiveBayes();
-        naiveBayes3.buildClassifier(orgData);
+        NaiveBayes naiveBayes4 = new NaiveBayes();
+        naiveBayes4.buildClassifier(trainAttSub);
 
         // Save the model
-        SerializationHelper.write("D:\\Documents\\Downloads\\Weka project\\models\\naiveBayes_10fcv_model.model", naiveBayes3);
+        SerializationHelper.write("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_10fcv2.model", naiveBayes4);
 
         // Load the trained model
-        NaiveBayes loadedNaiveBayes3 = (NaiveBayes) SerializationHelper.read("D:\\Documents\\Downloads\\Weka project\\models\\naiveBayes_10fcv_model.model");
+        NaiveBayes loadedNaiveBayes4 = (NaiveBayes) SerializationHelper.read("C:\\Users\\ttai2\\Documents\\GitHub\\Data-Mining\\models\\naiveBayes_10fcv2.model");
 
         // Evaluate the model using cross-validation
-        long startTime2 = System.currentTimeMillis(); // Record start time
-        Evaluation eval3 = new Evaluation(orgData);
-        eval3.crossValidateModel(loadedNaiveBayes3, orgData, 10, new java.util.Random(1));
-        long endTime2 = System.currentTimeMillis(); // Record end time
+        long startTime1 = System.currentTimeMillis(); // Record start time
+        Evaluation eval4 = new Evaluation(trainAttSub);
+        eval4.crossValidateModel(loadedNaiveBayes4, trainAttSub, 10, new java.util.Random(1));
+        long endTime1 = System.currentTimeMillis(); // Record end time
 
         // Calculate runtime
-        long runtimeMillis2 = endTime2 - startTime2;
-        double runtimeSeconds2 = runtimeMillis2 / 1000.0;
+        long runtimeMillis1 = endTime1 - startTime1;
+        double runtimeSeconds1 = runtimeMillis1 / 1000.0;
 
         // Print summary for the model evaluation
-        System.out.println(eval3.toSummaryString("=== Summary Model Evaluation ===\n", false));
-        System.out.println(eval3.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-        System.out.println(eval3.toMatrixString("=== Confusion Matrix ===\n"));  
-        System.out.println("Runtime (seconds): " + runtimeSeconds2);              
+        System.out.println(eval4.toSummaryString("=== Summary 4th Model Evaluation ===\n", false));
+        System.out.println(eval4.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
+        System.out.println(eval4.toMatrixString("=== Confusion Matrix ===\n"));  
+        System.out.println("Runtime (seconds): " + runtimeSeconds1);              
     }
 }
